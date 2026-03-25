@@ -92,3 +92,27 @@ console.log(findMajorityElement([2, 13]));               // Output: -1
 ```
 
 
+
+3. Removee duplicates from sorted array
+
+```
+const removeDuplicates = (arr) => {
+    if(arr.length === 0) return arr;
+    let i = 0;
+    for (let j=1; j< arr.length; j++) {
+      if(arr[j] !== arr[i]) {
+        i++
+        arr[i] = arr[j]
+      }
+    }
+    return i+1
+}
+
+let myArr = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+let k = removeDuplicates(myArr);
+
+console.log(k); // Output: 5
+console.log(myArr.slice(0, k)); // Output: [0, 1, 2, 3, 4]
+```
+
+
