@@ -1,6 +1,6 @@
 # dsa_problems
 
-1. Move Zeros
+1. Move Zeros at the end of array
 
 ```
  const moveZeros = (arr) => {
