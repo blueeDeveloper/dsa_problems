@@ -93,7 +93,7 @@ console.log(findMajorityElement([2, 13]));               // Output: -1
 
 
 
-3. Removee duplicates from sorted array
+3. Remove duplicates from sorted array
 
 ```
 const removeDuplicates = (arr) => {
@@ -115,4 +115,25 @@ console.log(k); // Output: 5
 console.log(myArr.slice(0, k)); // Output: [0, 1, 2, 3, 4]
 ```
 
+4. The Best Time to Buy and Sell Stock- It is a classic interview question. The goal is to find the maximum profit you can make by buying a stock on one day and selling it on a future day.
 
+```
+const maxProfit = (prices) => {
+    let minNumber = Infinity;
+    let maxProfit = 0;
+    for (let i=0; i< prices.length; i++) {
+      if(prices[i] < minNumber) {
+        minNumber = prices[i]
+      }
+      else if(prices[i] - minNumber > maxProfit) {
+        maxProfit = prices[i] - minNumber
+      }
+    }
+    
+    return maxProfit
+};
+
+// Example Usage:
+const dailyPrices = [7, 1, 5, 3, 6, 4];
+console.log(maxProfit(dailyPrices)); // Output: 5 (Buy at 1, Sell at 6)
+```
