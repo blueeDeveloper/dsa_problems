@@ -66,3 +66,29 @@ console.log(findMajorityElement([1, 1, 2, 3, 3, 5, 3, 3, 3])); // Output: 3
 console.log(findMajorityElement([7]));                   // Output: 7
 console.log(findMajorityElement([2, 13]));               // Output: -1
 ```
+
+
+Same examople can be solved with Hash Map but there is a catch. space complexity increases O(n)
+
+```
+const findMajorityElement = (arr) => {
+    let counts = new Map();
+    for (let num of arr) {
+      counts.set(num, (counts.get(num) || 0) + 1)
+      if(counts.get(num) > arr.length/2) {
+        return num
+      }
+    }
+    
+    return -1
+    
+}
+
+// Test Cases
+console.log(findMajorityElement([1, 1, 2, 3, 3, 5, 3, 3, 3])); // Output: 3
+console.log(findMajorityElement([7]));                   // Output: 7
+console.log(findMajorityElement([2, 13]));               // Output: -1
+
+```
+
+
