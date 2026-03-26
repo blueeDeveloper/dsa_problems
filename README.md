@@ -119,21 +119,23 @@ console.log(myArr.slice(0, k)); // Output: [0, 1, 2, 3, 4]
 
 ```
 const maxProfit = (prices) => {
-    let minNumber = Infinity;
+    let buyAt = Infinity;
+    let sellAt = 0
     let maxProfit = 0;
     for (let i=0; i< prices.length; i++) {
-      if(prices[i] < minNumber) {
-        minNumber = prices[i]
+      if(prices[i] < buyAt) {
+        buyAt = prices[i]
       }
-      else if(prices[i] - minNumber > maxProfit) {
-        maxProfit = prices[i] - minNumber
+      else if(prices[i] - buyAt > maxProfit) {
+        maxProfit = prices[i] - buyAt;
+        sellAt = prices[i]
       }
     }
     
-    return maxProfit
+    return [buyAt, sellAt, maxProfit]
 };
 
 // Example Usage:
 const dailyPrices = [7, 1, 5, 3, 6, 4];
-console.log(maxProfit(dailyPrices)); // Output: 5 (Buy at 1, Sell at 6)
+console.log(maxProfit(dailyPrices)); // Output: [1, 6, 5] (Buy at 1, Sell at 6, max profit 5)
 ```
