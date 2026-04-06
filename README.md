@@ -1,4 +1,4 @@
-# dsa_problems
+# DSA problems
 
 1. Move Zeros at the end of array
 
